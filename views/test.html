@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests - SOS Scolaire Numérique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Tests de l'application</h1>
+
+        <!-- Panneau de contrôle -->
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-semibold">Panneau de contrôle</h2>
+                <button id="runTests" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                    <i class="fas fa-play mr-2"></i>Lancer les tests
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-sm text-gray-500 mb-1">Total</div>
+                    <div id="totalTests" class="text-2xl font-bold">0</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4">
+                    <div class="text-sm text-gray-500 mb-1">Réussis</div>
+                    <div id="passedTests" class="text-2xl font-bold text-green-600">0</div>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4">
+                    <div class="text-sm text-gray-500 mb-1">Échoués</div>
+                    <div id="failedTests" class="text-2xl font-bold text-red-600">0</div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-4">
+                    <div class="text-sm text-gray-500 mb-1">Taux de réussite</div>
+                    <div id="successRate" class="text-2xl font-bold text-blue-600">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Console de test -->
+        <div class="bg-gray-900 rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-white">Console</h2>
+                <button id="clearConsole" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <div id="console" class="font-mono text-sm text-gray-300 bg-gray-800 rounded p-4 h-96 overflow-auto">
+                > Tests prêts à être exécutés...
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { TestUtils } from '/js/test-utils.js';
+        import { TestRunner } from '/js/test-runner.js';
+
+        // Éléments UI
+        const runButton = document.getElementById('runTests');
+        const console = document.getElementById('console');
+        const clearConsole = document.getElementById('clearConsole');
+        
+        // Stats
+        const totalTests = document.getElementById('totalTests');
+        const passedTests = document.getElementById('passedTests');
+        const failedTests = document.getElementById('failedTests');
+        const successRate = document.getElementById('successRate');
+
+        // Console personnalisée
+        const log = (...args) => {
+            const line = document.createElement('div');
+            line.textContent = `> ${args.join(' ')}`;
+            console.appendChild(line);
+            console.scrollTop = console.scrollHeight;
+        };
+
+        // Surcharger console.log
+        const originalLog = window.console.log;
+        window.console.log = (...args) => {
+            originalLog.apply(window.console, args);
+            log(...args);
+        };
+
+        // Lancer les tests
+        runButton.addEventListener('click', async () => {
+            runButton.disabled = true;
+            runButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Tests en cours...';
+            
+            try {
+                const runner = new TestRunner();
+                await runner.runAll();
+                
+                // Mettre à jour les stats
+                totalTests.textContent = runner.results.total;
+                passedTests.textContent = runner.results.passed;
+                failedTests.textContent = runner.results.failed;
+                successRate.textContent = 
+                    `${((runner.results.passed / runner.results.total) * 100).toFixed(2)}%`;
+                
+            } catch (error) {
+                console.log('❌ Erreur:', error.message);
+            } finally {
+                runButton.disabled = false;
+                runButton.innerHTML = '<i class="fas fa-play mr-2"></i>Lancer les tests';
+            }
+        });
+
+        // Effacer la console
+        clearConsole.addEventListener('click', () => {
+            console.innerHTML = '> Console effacée\n';
+        });
+    </script>
+</body>
+</html>
