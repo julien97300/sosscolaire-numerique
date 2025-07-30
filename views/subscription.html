@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnements - SOS Scolaire Numérique</title>
+    <meta name="description" content="Découvrez nos formules d'abonnement adaptées à vos besoins pour un soutien scolaire personnalisé">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/index.html" class="flex items-center space-x-3">
+                    <img src="/assets/images/logo.svg" alt="Logo SOS Scolaire" class="h-10">
+                    <span class="text-2xl font-bold text-blue-900">SOS Scolaire Numérique</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/views/login.html" class="text-blue-600 hover:text-blue-700">Se connecter</a>
+                    <a href="/views/register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-blue-900 via-indigo-800 to-indigo-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Soutenez le Projet</h1>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto fade-in">
+                    SOS Scolaire Numérique est un projet open source gratuit qui vise à rendre l'éducation accessible à tous.
+                    Votre soutien nous aide à maintenir et améliorer la plateforme.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Plans -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Don ponctuel -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 fade-in">
+                    <div class="text-center mb-8">
+                        <div class="inline-block p-3 bg-blue-100 rounded-full mb-4">
+                            <i class="fas fa-coffee text-3xl text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Offrez un café</h2>
+                        <div class="relative">
+                            <div class="text-4xl font-bold text-blue-600">5€</div>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Soutien ponctuel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Remerciements Discord</span>
+                        </li>
+                    </ul>
+                    <a href="https://ko-fi.com/sosscolaire" target="_blank" rel="noopener" class="block w-full text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Faire un don
+                    </a>
+                </div>
+
+                <!-- Don mensuel -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-2 border-blue-600 relative fade-in">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm">Recommandé</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="inline-block p-3 bg-blue-100 rounded-full mb-4">
+                            <i class="fas fa-heart text-3xl text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Soutien mensuel</h2>
+                        <div class="relative">
+                            <div class="text-4xl font-bold text-blue-600">10€<span class="text-sm text-gray-500">/mois</span></div>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Badge spécial Discord</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Accès canal privé</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Nom dans les crédits</span>
+                        </li>
+                    </ul>
+                    <a href="https://ko-fi.com/sosscolaire/tiers" target="_blank" rel="noopener" class="block w-full text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Devenir soutien
+                    </a>
+                </div>
+
+                <!-- Don personnalisé -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 fade-in">
+                    <div class="text-center mb-8">
+                        <div class="inline-block p-3 bg-blue-100 rounded-full mb-4">
+                            <i class="fas fa-gift text-3xl text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Don personnalisé</h2>
+                        <div class="relative">
+                            <div class="text-4xl font-bold text-blue-600">?€</div>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Montant libre</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Message personnalisé</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-600">Tous les avantages</span>
+                        </li>
+                    </ul>
+                    <a href="https://ko-fi.com/sosscolaire/commissions" target="_blank" rel="noopener" class="block w-full text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Faire un don
+                    </a>
+                </div>
+            </div>
+
+            <!-- Utilisation des dons -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-16 fade-in">
+                <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Comment sont utilisés vos dons ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-server text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Infrastructure</h3>
+                        <p class="text-gray-600">Hébergement, serveurs et maintenance</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Développement</h3>
+                        <p class="text-gray-600">Nouvelles fonctionnalités</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-book text-3xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Contenu</h3>
+                        <p class="text-gray-600">Création de cours et exercices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">À propos des dons</h2>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left px-6 py-4 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-900">La plateforme est-elle vraiment gratuite ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Oui, SOS Scolaire Numérique est et restera toujours 100% gratuit. Les dons sont optionnels
+                                et servent uniquement à soutenir le développement et la maintenance de la plateforme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left px-6 py-4 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-900">Comment sont utilisés les dons ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                100% des dons sont utilisés pour maintenir et améliorer la plateforme : hébergement,
+                                développement de nouvelles fonctionnalités, création de contenu pédagogique, etc.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left px-6 py-4 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-900">Puis-je annuler mon soutien mensuel ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4">
+                            <p class="text-gray-600">
+                                Oui, vous pouvez annuler votre soutien mensuel à tout moment depuis votre compte Ko-fi.
+                                Il n'y a aucun engagement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">À propos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/about.html" class="text-gray-400 hover:text-white">Qui sommes-nous</a></li>
+                        <li><a href="/views/contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/views/help.html" class="text-gray-400 hover:text-white">Centre d'aide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/legal.html" class="text-gray-400 hover:text-white">Mentions légales</a></li>
+                        <li><a href="/views/privacy.html" class="text-gray-400 hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="/views/terms.html" class="text-gray-400 hover:text-white">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 border-t border-gray-800 pt-8">
+                <p>&copy; 2025 SOS Scolaire Numérique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        // Animation des sections au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Animations GSAP
+        gsap.from('.grid > div', {
+            duration: 0.8,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+    </script>
+</body>
+</html>
