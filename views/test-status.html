@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Status - SOS Scolaire Numérique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Status des Tests</h1>
+
+        <!-- Status -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div class="flex items-center space-x-4">
+                <div id="statusIcon" class="w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-spinner fa-spin text-2xl text-blue-600"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold" id="statusTitle">Vérification en cours...</h2>
+                    <p class="text-gray-600" id="statusMessage">Veuillez patienter pendant la vérification du statut</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Détails -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">Détails des vérifications</h2>
+            <div class="space-y-4" id="checkList">
+                <!-- Les vérifications seront ajoutées ici -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Liste des vérifications
+        const checks = [
+            { id: 'connection', name: 'Connexion à la base de données', status: 'pending' },
+            { id: 'auth', name: 'Authentification', status: 'pending' },
+            { id: 'api', name: 'API', status: 'pending' }
+        ];
+
+        // Afficher les vérifications
+        function renderChecks() {
+            const checkList = document.getElementById('checkList');
+            checkList.innerHTML = checks.map(check => `
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <span>${check.name}</span>
+                    <span id="${check.id}-status" class="flex items-center">
+                        ${getStatusIcon(check.status)}
+                    </span>
+                </div>
+            `).join('');
+        }
+
+        // Obtenir l'icône de statut
+        function getStatusIcon(status) {
+            switch(status) {
+                case 'success':
+                    return '<i class="fas fa-check-circle text-green-600"></i>';
+                case 'error':
+                    return '<i class="fas fa-times-circle text-red-600"></i>';
+                case 'warning':
+                    return '<i class="fas fa-exclamation-triangle text-yellow-600"></i>';
+                default:
+                    return '<i class="fas fa-spinner fa-spin text-blue-600"></i>';
+            }
+        }
+
+        // Mettre à jour le statut global
+        function updateGlobalStatus() {
+            const statusIcon = document.getElementById('statusIcon');
+            const statusTitle = document.getElementById('statusTitle');
+            const statusMessage = document.getElementById('statusMessage');
+
+            const allSuccess = checks.every(check => check.status === 'success');
+            const hasError = checks.some(check => check.status === 'error');
+            const hasWarning = checks.some(check => check.status === 'warning');
+            const allComplete = checks.every(check => check.status !== 'pending');
+
+            if (allComplete) {
+                if (allSuccess) {
+                    statusIcon.innerHTML = '<i class="fas fa-check-circle text-2xl text-green-600"></i>';
+                    statusIcon.className = 'w-12 h-12 bg-green-100 rounded-full flex items-center justify-center';
+                    statusTitle.textContent = 'Tous les systèmes sont opérationnels';
+                    statusMessage.textContent = 'Tout fonctionne correctement';
+                } else if (hasError) {
+                    statusIcon.innerHTML = '<i class="fas fa-times-circle text-2xl text-red-600"></i>';
+                    statusIcon.className = 'w-12 h-12 bg-red-100 rounded-full flex items-center justify-center';
+                    statusTitle.textContent = 'Certains systèmes sont indisponibles';
+                    statusMessage.textContent = 'Des erreurs ont été détectées';
+                } else if (hasWarning) {
+                    statusIcon.innerHTML = '<i class="fas fa-exclamation-triangle text-2xl text-yellow-600"></i>';
+                    statusIcon.className = 'w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center';
+                    statusTitle.textContent = 'Attention requise';
+                    statusMessage.textContent = 'Certains systèmes nécessitent votre attention';
+                }
+            }
+        }
+
+        // Simuler les vérifications
+        async function runChecks() {
+            renderChecks();
+
+            // Vérifier la connexion
+            setTimeout(() => {
+                checks.find(c => c.id === 'connection').status = 'success';
+                document.getElementById('connection-status').innerHTML = getStatusIcon('success');
+                updateGlobalStatus();
+            }, 1000);
+
+            // Vérifier l'authentification
+            setTimeout(() => {
+                checks.find(c => c.id === 'auth').status = 'success';
+                document.getElementById('auth-status').innerHTML = getStatusIcon('success');
+                updateGlobalStatus();
+            }, 2000);
+
+            // Vérifier l'API
+            setTimeout(() => {
+                checks.find(c => c.id === 'api').status = 'success';
+                document.getElementById('api-status').innerHTML = getStatusIcon('success');
+                updateGlobalStatus();
+            }, 3000);
+        }
+
+        // Lancer les vérifications au chargement
+        document.addEventListener('DOMContentLoaded', runChecks);
+    </script>
+</body>
+</html>
