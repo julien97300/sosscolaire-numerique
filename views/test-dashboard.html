@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tests - SOS Scolaire Numérique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-card {
+            transition: all 0.3s ease;
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+        }
+        .metric-value {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="/assets/images/logo.svg" alt="Logo" class="h-10">
+                    <span class="text-2xl font-bold text-blue-900 ml-3">Tests Dashboard</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="runTests" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        <i class="fas fa-play mr-2"></i>Lancer les tests
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Vue d'ensemble -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-500">Tests totaux</h3>
+                    <span class="text-blue-600"><i class="fas fa-vial"></i></span>
+                </div>
+                <p class="text-2xl font-bold metric-value">25</p>
+                <p class="text-green-600 text-sm">100% complétés</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-500">Réussis</h3>
+                    <span class="text-green-600"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="text-2xl font-bold metric-value">23</p>
+                <p class="text-green-600 text-sm">92% de succès</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-500">Avertissements</h3>
+                    <span class="text-yellow-600"><i class="fas fa-exclamation-triangle"></i></span>
+                </div>
+                <p class="text-2xl font-bold metric-value">2</p>
+                <p class="text-yellow-600 text-sm">8% à surveiller</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-500">Échecs</h3>
+                    <span class="text-red-600"><i class="fas fa-times-circle"></i></span>
+                </div>
+                <p class="text-2xl font-bold metric-value">0</p>
+                <p class="text-green-600 text-sm">Aucun échec</p>
+            </div>
+        </div>
+
+        <!-- Catégories de test -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Sécurité -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Sécurité</h3>
+                        <p class="text-sm text-gray-500">4 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Injection SQL</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Force brute</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tachometer-alt text-2xl text-green-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Performance</h3>
+                        <p class="text-sm text-gray-500">5 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Temps de réponse</span>
+                            <span class="text-green-600">150ms</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Charge CPU</span>
+                            <span class="text-yellow-600">75%</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-yellow-600 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check-circle text-2xl text-yellow-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Validation</h3>
+                        <p class="text-sm text-gray-500">4 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Entrées</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Format</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accès -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-lock text-2xl text-red-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Accès</h3>
+                        <p class="text-sm text-gray-500">3 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Authentification</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Permissions</span>
+                            <span class="text-green-600">Succès</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nouvelles catégories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Charge -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-server text-2xl text-purple-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Charge</h3>
+                        <p class="text-sm text-gray-500">5 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Utilisateurs concurrents</span>
+                            <span class="text-green-600">100</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stress -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-exclamation text-2xl text-orange-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Stress</h3>
+                        <p class="text-sm text-gray-500">3 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Point de rupture</span>
+                            <span class="text-yellow-600">800 users</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-yellow-600 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Résilience -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shield-check text-2xl text-teal-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Résilience</h3>
+                        <p class="text-sm text-gray-500">4 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Taux de récupération</span>
+                            <span class="text-green-600">95%</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intégration -->
+            <div class="bg-white rounded-xl shadow-lg p-6 test-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-puzzle-piece text-2xl text-indigo-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-gray-900">Intégration</h3>
+                        <p class="text-sm text-gray-500">6 tests</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Taux de succès</span>
+                            <span class="text-green-600">100%</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logs détaillés -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Logs des tests</h2>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-medium text-gray-900">Test d'injection SQL réussi</p>
+                        <p class="text-sm text-gray-500">Il y a 5 minutes</p>
+                    </div>
+                    <span class="ml-auto text-sm text-gray-500">150ms</span>
+                </div>
+
+                <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-medium text-gray-900">Test de force brute réussi</p>
+                        <p class="text-sm text-gray-500">Il y a 5 minutes</p>
+                    </div>
+                    <span class="ml-auto text-sm text-gray-500">250ms</span>
+                </div>
+
+                <div class="flex items-center p-4 bg-yellow-50 rounded-lg">
+                    <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-medium text-gray-900">Avertissement de performance</p>
+                        <p class="text-sm text-gray-500">Il y a 10 minutes</p>
+                    </div>
+                    <span class="ml-auto text-sm text-gray-500">500ms</span>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <button class="text-blue-600 hover:text-blue-700">
+                    Voir tous les logs <i class="fas fa-chevron-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Animation des cartes de test
+        document.querySelectorAll('.test-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Bouton de lancement des tests
+        document.getElementById('runTests').addEventListener('click', async () => {
+            const button = document.getElementById('runTests');
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Tests en cours...';
+
+            try {
+                // Simuler l'exécution des tests
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>Tests terminés';
+                button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                button.classList.add('bg-green-600', 'hover:bg-green-700');
+                
+                // Mettre à jour les compteurs
+                updateCounters();
+
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-play mr-2"></i>Lancer les tests';
+                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2000);
+
+            } catch (error) {
+                button.innerHTML = '<i class="fas fa-times mr-2"></i>Erreur';
+                button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                button.classList.add('bg-red-600', 'hover:bg-red-700');
+
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-play mr-2"></i>Lancer les tests';
+                    button.classList.remove('bg-red-600', 'hover:bg-red-700');
+                    button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2000);
+            }
+        });
+        
+        // Fonction pour mettre à jour les compteurs
+        function updateCounters() {
+            const counters = document.querySelectorAll('.metric-value');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                let count = 0;
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.textContent = Math.min(Math.round(count), target);
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+    </script>
+</body>
+</html>
