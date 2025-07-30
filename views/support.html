@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support et Accompagnement - SOS Scolaire Numérique</title>
+    <meta name="description" content="Découvrez notre service de support dédié et notre équipe d'accompagnement pour votre réussite scolaire">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/index.html" class="flex items-center space-x-3">
+                    <img src="/assets/images/logo.svg" alt="Logo SOS Scolaire" class="h-10">
+                    <span class="text-2xl font-bold text-blue-900">SOS Scolaire Numérique</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/views/login.html" class="text-blue-600 hover:text-blue-700">Se connecter</a>
+                    <a href="/views/register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-blue-900 via-indigo-800 to-indigo-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Support et Accompagnement</h1>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto fade-in">
+                    Une équipe dédiée pour vous accompagner à chaque étape de votre parcours
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Services de support -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 fade-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-3xl text-blue-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Chat en Direct</h2>
+                    <p class="text-gray-600 mb-6">
+                        Assistance immédiate pour toutes vos questions
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Réponse en moins de 5 minutes</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Support technique</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Aide aux exercices</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 fade-in">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-3xl text-green-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Sessions Vidéo</h2>
+                    <p class="text-gray-600 mb-6">
+                        Cours particuliers en visioconférence
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Professeurs qualifiés</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Horaires flexibles</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Support personnalisé</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 fade-in">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-3xl text-purple-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Email Prioritaire</h2>
+                    <p class="text-gray-600 mb-6">
+                        Support par email avec réponse garantie
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Réponse sous 24h</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Suivi personnalisé</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Documentation détaillée</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Centre d'aide -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Centre d'Aide</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-question-circle text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Questions Fréquentes</h3>
+                                <p class="text-white/80">
+                                    Trouvez rapidement des réponses à vos questions dans notre base de connaissances
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-book text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Guides et Tutoriels</h3>
+                                <p class="text-white/80">
+                                    Des ressources détaillées pour vous aider à utiliser notre plateforme
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Équipe de support -->
+            <div class="mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Notre Équipe de Support</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <img src="https://ui-avatars.com/api/?name=Marie+L&background=6366f1&color=fff" 
+                             alt="Marie L." 
+                             class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <div class="text-center">
+                            <h3 class="font-bold text-gray-800">Marie L.</h3>
+                            <p class="text-gray-600">Support technique</p>
+                            <p class="text-sm text-gray-500 mt-2">5 ans d'expérience</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <img src="https://ui-avatars.com/api/?name=Thomas+D&background=6366f1&color=fff" 
+                             alt="Thomas D." 
+                             class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <div class="text-center">
+                            <h3 class="font-bold text-gray-800">Thomas D.</h3>
+                            <p class="text-gray-600">Support pédagogique</p>
+                            <p class="text-sm text-gray-500 mt-2">7 ans d'expérience</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <img src="https://ui-avatars.com/api/?name=Sophie+M&background=6366f1&color=fff" 
+                             alt="Sophie M." 
+                             class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <div class="text-center">
+                            <h3 class="font-bold text-gray-800">Sophie M.</h3>
+                            <p class="text-gray-600">Responsable satisfaction</p>
+                            <p class="text-sm text-gray-500 mt-2">6 ans d'expérience</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <img src="https://ui-avatars.com/api/?name=Paul+R&background=6366f1&color=fff" 
+                             alt="Paul R." 
+                             class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <div class="text-center">
+                            <h3 class="font-bold text-gray-800">Paul R.</h3>
+                            <p class="text-gray-600">Support administratif</p>
+                            <p class="text-sm text-gray-500 mt-2">4 ans d'expérience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-16 fade-in">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Questions Fréquentes</h2>
+                <div class="space-y-4">
+                    <details class="group">
+                        <summary class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100">
+                            <span class="font-medium text-gray-800">Comment accéder aux cours en ligne ?</span>
+                            <i class="fas fa-chevron-down text-gray-500 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="p-4 text-gray-600">
+                            Connectez-vous à votre compte et accédez à la section "Mes cours" depuis votre tableau de bord.
+                            Vous y trouverez tous vos cours organisés par matière.
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100">
+                            <span class="font-medium text-gray-800">Comment contacter un professeur ?</span>
+                            <i class="fas fa-chevron-down text-gray-500 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="p-4 text-gray-600">
+                            Utilisez la fonction chat en direct ou planifiez une session vidéo depuis votre espace personnel.
+                            Nos professeurs sont disponibles 7j/7 de 8h à 22h.
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100">
+                            <span class="font-medium text-gray-800">Comment suivre ma progression ?</span>
+                            <i class="fas fa-chevron-down text-gray-500 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="p-4 text-gray-600">
+                            Consultez vos statistiques et rapports détaillés dans la section "Progression" de votre compte.
+                            Vous pouvez suivre votre évolution par matière et par objectif.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                    Besoin d'aide ?
+                </h2>
+                <p class="text-gray-600 mb-8">
+                    Notre équipe est disponible 7j/7 pour vous accompagner
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/views/contact.html" 
+                       class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Contactez-nous
+                    </a>
+                    <a href="/views/help.html" 
+                       class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg hover:bg-gray-300 transition-colors">
+                        Centre d'aide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">À propos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/about.html" class="text-gray-400 hover:text-white">Qui sommes-nous</a></li>
+                        <li><a href="/views/contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/views/help.html" class="text-gray-400 hover:text-white">Centre d'aide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/views/legal.html" class="text-gray-400 hover:text-white">Mentions légales</a></li>
+                        <li><a href="/views/privacy.html" class="text-gray-400 hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="/views/terms.html" class="text-gray-400 hover:text-white">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 border-t border-gray-800 pt-8">
+                <p>&copy; 2025 SOS Scolaire Numérique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <script>
+        // Animation des sections au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Animations GSAP
+        gsap.from('.grid > div', {
+            duration: 0.8,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+    </script>
+</body>
+</html>
